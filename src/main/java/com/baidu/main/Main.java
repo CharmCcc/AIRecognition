@@ -35,8 +35,10 @@ public class Main {
         client.setSocketTimeoutInMillis(60000);
 
         BasicGeneralService basicGeneralService = new BasicGeneralServiceImpl(client);
-        System.out.println("文字识别开始...");
-        System.out.println(basicGeneralService.recognize());
+//        System.out.println("文字识别开始...");
+//        System.out.println(basicGeneralService.recognize());
+//        System.out.println("文字识别高精度版开始...");
+//        System.out.println(basicGeneralService.highPrecisionRecognization());
 
 //        PlateLicenseService plateLicenseService = new PlateLicenseServiceImpl(client);
 //        System.out.println("车牌识别开始...");
