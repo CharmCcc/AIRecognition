@@ -10,6 +10,7 @@ import java.util.HashMap;
 
 /**
  * @author chm
+ * 身份证识别模块
  * @date 2020/1/2 9:55
  */
 public class IdCardServiceImpl implements IdCardService {
@@ -24,10 +25,6 @@ public class IdCardServiceImpl implements IdCardService {
 
     public IdCardServiceImpl(AipOcr aipOcr) {
         this.client = aipOcr;
-
-        options.put("detect_direction", "true");
-        options.put("detect_risk", "false");
-
     }
 
     // 转换识别身份证的正面还是反面
@@ -45,6 +42,9 @@ public class IdCardServiceImpl implements IdCardService {
      */
     @Override
     public String recognize() {
+
+        options.put("detect_direction", "true");
+        options.put("detect_risk", "false");
 
         // 参数为本地图片路径
         String image = "D:\\IDEA\\AI实训项目\\AIRecognition\\src\\main\\resources\\testPic\\idcard1.jpg";

@@ -22,11 +22,6 @@ public class BasicGeneralServiceImpl implements BasicGeneralService {
 
     public BasicGeneralServiceImpl(AipOcr aipOcr){
         client = aipOcr;
-
-        options.put("language_type", "CHN_ENG");
-        options.put("detect_direction", "true");
-        options.put("detect_language", "true");
-        options.put("probability", "true");
     }
 
 
@@ -36,6 +31,11 @@ public class BasicGeneralServiceImpl implements BasicGeneralService {
      */
     @Override
     public String recognize() {
+
+        options.put("language_type", "CHN_ENG");
+        options.put("detect_direction", "true");
+        options.put("detect_language", "true");
+        options.put("probability", "true");
 
         // 参数为本地图片路径
         String image = "D:\\IDEA\\AI实训项目\\AIRecognition\\src\\main\\resources\\testPic\\words.jpg";

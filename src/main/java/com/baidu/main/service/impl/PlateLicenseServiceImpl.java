@@ -22,8 +22,6 @@ public class PlateLicenseServiceImpl implements PlateLicenseService {
 
     public PlateLicenseServiceImpl(AipOcr aipOcr){
         client = aipOcr;
-        // 开启检测多张车牌
-        options.put("multi_detect", "true");
     }
 
     // 开启或关闭检测多张车牌
@@ -39,6 +37,9 @@ public class PlateLicenseServiceImpl implements PlateLicenseService {
      * @return
      */
     public String recognize(){
+
+        // 开启检测多张车牌
+        options.put("multi_detect", "true");
 
         // 参数为本地图片路径
         String image = "D:\\IDEA\\AI实训项目\\AIRecognition\\src\\main\\resources\\testPic\\plate3.jpg";

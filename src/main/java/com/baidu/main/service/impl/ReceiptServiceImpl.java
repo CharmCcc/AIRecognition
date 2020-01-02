@@ -22,11 +22,6 @@ public class ReceiptServiceImpl implements ReceiptService {
 
     public ReceiptServiceImpl(AipOcr aipOcr) {
         client = aipOcr;
-
-        options.put("recognize_granularity", "big");
-        options.put("probability", "true");
-        options.put("accuracy", "normal");
-        options.put("detect_direction", "true");
     }
 
     /**
@@ -36,6 +31,12 @@ public class ReceiptServiceImpl implements ReceiptService {
      */
     @Override
     public String recognize() {
+
+        options.put("recognize_granularity", "big");
+        options.put("probability", "true");
+        options.put("accuracy", "normal");
+        options.put("detect_direction", "true");
+
         // 参数为本地图片路径
         String image = "D:\\IDEA\\AI实训项目\\AIRecognition\\src\\main\\resources\\testPic\\receipt2.jpg";
         JSONObject res = client.receipt(image, options);
